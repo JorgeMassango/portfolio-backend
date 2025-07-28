@@ -1,14 +1,16 @@
 {
   "name": "portfolio-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "API para o portfólio",
+  "main": "dist/server.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Jorge Massango",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
