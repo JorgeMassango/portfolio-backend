@@ -39,6 +39,11 @@ app.use('/projects', projectsRoutes);
 app.use('/blog', blogRoutes);
 app.use('/contact', contactRoutes);
 
+app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+  console.error('Erro global:', err.message);
+  res.status(500).json({ error: err.message || 'Erro interno no servidor.' });
+});
+
 const PORT = process.env.PORT || 3333;
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
